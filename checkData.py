@@ -1,7 +1,6 @@
 import ogr
 import os
 import numpy
-from datetime import datetime
 
 for dirName, subDirs, fileNames in os.walk('.'):
     for f in fileNames:
@@ -10,7 +9,6 @@ for dirName, subDirs, fileNames in os.walk('.'):
             f = os.path.join(dirName, f)
             ds = ogr.Open(f)
             for lyr in ds:
-                dateStamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
                 print ('DateStamp: ' + dateStamp)
                 fileSize = sum([sum(map(lambda fname: os.path.getsize(os.path.join(directory, fname)), files)) for directory, folders, files in os.walk(dirName)])
                 fileSize = float(fileSize)
