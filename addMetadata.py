@@ -101,8 +101,6 @@ def createMetadata():
             credit.text = name + '. (' + v[9]+ '). ' + title.text + '. Available at: ' + URL.text + '.'
             edition.clear()
             new_edition = ET.SubElement(citation[2],'{http://www.isotc211.org/2005/gco}CharacterString')
-            print new_edition.tag
-            new_edition.text = v[15]
             tree.write(file)
 
 ####Walk through a directory of files, find XML documents. Find target metadata elements.
